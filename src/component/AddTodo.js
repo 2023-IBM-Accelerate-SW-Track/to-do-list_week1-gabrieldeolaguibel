@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class AddTodo extends Component {
     // A local react state of the this component with a content property set to nothing.
@@ -32,19 +34,20 @@ class AddTodo extends Component {
     
     render() {
       return (
-        
         <div>
           <TextField
             label="Add New Item"
             variant="outlined"
             onChange={this.handleChange}
             value={this.state.content}
+            data-testid="new-item-input" // added test id
           />
           <Button
             style={{ marginLeft: "10px" }}
             onClick={this.handleSubmit}
             variant="contained"
             color="primary"
+            data-testid="new-item-button" // added test id
           >
             Add
           </Button>
